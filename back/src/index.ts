@@ -1,4 +1,5 @@
 import express from 'express'
+import cookieParser from 'cookie-parser';
 
 const app = express()
 const port = process.env.PORT || 3000;
@@ -8,7 +9,7 @@ async function main() {
     //Client.connect;
   
       app.get("/", (req, res) => res.send("gti619 backend"));
-      //app.use(cookieParser());
+      app.use(cookieParser());
       app.use((req, res, next) => {
         // res.header("Access-Control-Allow-Origin", "*");
         res.header(
